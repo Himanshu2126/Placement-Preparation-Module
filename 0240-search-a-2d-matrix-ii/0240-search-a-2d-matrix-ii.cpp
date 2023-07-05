@@ -41,7 +41,7 @@ int n=matrix.size();
           {   
               if(target==matrix[i][j])
               {
-                      
+                      matrix.clear();
                   return true;
 
               }
@@ -55,7 +55,7 @@ int n=matrix.size();
              
 
            }
-             
+              matrix.clear();
            return false;
 
 

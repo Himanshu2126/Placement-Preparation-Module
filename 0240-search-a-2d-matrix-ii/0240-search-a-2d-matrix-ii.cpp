@@ -30,7 +30,7 @@ public:
         // return false;
 
 
-
+     ios::sync_with_stdio(0);
 
 int n=matrix.size();
          int m=matrix[0].size();
@@ -41,6 +41,7 @@ int n=matrix.size();
           {   
               if(target==matrix[i][j])
               {
+                      matrix.clear();
                   return true;
 
               }
@@ -54,7 +55,7 @@ int n=matrix.size();
              
 
            }
-
+              matrix.clear();
            return false;
 
 

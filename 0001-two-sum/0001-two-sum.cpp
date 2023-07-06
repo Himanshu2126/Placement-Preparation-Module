@@ -2,79 +2,51 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) 
     {
-
       int n=nums.size();
-        vector<int>ans;
+           vector<int>ans;
+            vector<int>num1;
+            for(int i=0;i<n;i++)
+            {
+              num1.push_back(nums[i]);
+            }
 
+      sort(num1.begin(),num1.end());
 
-    //     for(int i=0;i<n;i++)
-    //     {
-    //         int targett=target;
-    //         targett=targett-nums[i];
+      int left=0;
 
-
-    //         for(int j=i+1;j<n;j++)
-    //         {
-    //             if(targett==nums[j])
-    //             {
-    //                 ans.push_back(i);
-    //                 ans.push_back(j);
-    //                 break;
-    //             }
-    //         }
-    //     }
-    //      return ans; 
-    
-      unordered_map<int,int >mp;
-
+      int right=n-1;
      
-         
+      while(left<right)
+      {
+         int sum=num1[left]+num1[right];
+        if(sum==target)
+          {
+              left=num1[left];
+              right=num1[right];
+              break;
 
-     for(int i=0;i<n;i++)
-     {
+          }
+        else if(sum<target)
+        left++;
+        else
+        right--;
+          
 
-         int num=nums[i];  
-         int moreNeeded=target-num;
+      }
 
-         
-         if(mp.find(moreNeeded)!=mp.end())
-         {
-               
-              return {mp[moreNeeded],i};
-              
-         }
 
-         mp[num]=i;
+
+      for(int i=0;i<n;i++)
+      {
         
+        if(left==nums[i]) ans.push_back(i);
 
-     }
-
-
-
- 
+        else if(right==nums[i]) ans.push_back(i);
 
 
+      }
 
-
-   return {-1,-1};
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      return ans;
+        
     }
 };

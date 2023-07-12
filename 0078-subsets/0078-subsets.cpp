@@ -26,7 +26,7 @@ public:
         int i=0;
         
         sumsub(0,sub,ans,nums,N);
-        sort(ans.begin(),ans.end());
+      
         
         return ans;
         

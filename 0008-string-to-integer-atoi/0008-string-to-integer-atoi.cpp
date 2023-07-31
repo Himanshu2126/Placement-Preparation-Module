@@ -12,7 +12,7 @@ public:
         if(s[i] == '+') i++;
 
         if(i < n && s[i] >= 'a' && s[i] <= 'z') return 0;
-        // cout << i << endl;
+        
         long ans = 0;
         while(i < n && s[i] >= '0' && s[i] <= '9') {
             ans = (ans * 10) + s[i]-'0';
